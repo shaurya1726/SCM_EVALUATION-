@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;500;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto',sans-serif;
+}
+/* ------ Header Section ------*/
+.veg-food{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Veg Images/veg1.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.non-veg-food{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Non-Veg Images/non-veg2.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.ice-cream{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Ice-cream/icecream1.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.milkshake{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Milkshakes/milkshake1.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.juice{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Juices/juice1.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.cake{
+  min-height: 250vh;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url("Images/Cake/cake1.jpeg") ;
+  background-size: cover;
+  background-attachment: fixed;
+}
+header{
+  background: rgba(12,11,9,0.6);
+  height: 150px;
+  border-bottom: 2px solid rgba(12,11,9,0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+header h1{
+  color: #fff;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 30px 0 20px 0;
+  text-transform: uppercase;
+}
+header nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul{
+  display: flex;
+}
+header nav ul li{
+  list-style: none;
+  padding: 10px;
+}
+header nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.4s ease-in;
+}
+header nav ul li a:hover{
+  color: #CDA45E;
+}
+.btn-cart{
+  padding: 5px 30px;
+  margin-left: 30px;
+  border: 0;
+  outline: 0;
+  color: #CDA45E;
+  background-color: transparent;
+  border: 2px solid #CDA45E;
+  font-size: 17px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.4s ease-in;
+}
+.btn-cart:hover{
+  color: #292929;
+  background-color: #CDA45E;
+}
+.btn-cart i{
+  margin-left: 10px;
+}
+.cart-count{
+  position: absolute;
+  background-color: #CDA45E;
+  color: #292929;
+  text-align: center;
+  top: 48px;
+  right: 450px;
+  height: 30px;
+  width: 30px;
+  padding: 3px;
+  line-height: 25px;
+  border-radius: 50%;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* -------- Cart Section --------*/
+
+.cart {
+  display: none; /* Hide the cart by default */
+}
+
+#cart-close, #cart-close-icon {
+  display: none;
+  /* Hide the close buttons by default */ 
+  position: relative; /* Ensure positioning is relative to the cart */
+} 
+
+#cart-close-icon { 
+  display: block;
+  position: absolute; 
+  top: 10px; /* Adjust as needed */ 
+  right: 10px; /* Adjust as needed */ 
+  cursor: pointer; 
+  font-size: 24px; /* Adjust the size as needed */ 
+}
+.btn-close {
+  cursor: pointer;
+  /* Additional styling for your close button */
+}
+
+.fa-close {
+  cursor: pointer;
+  /* Additional styling for your close icon */
+}
+
+.cart-open #cart-close, .cart-open #cart-close-icon {
+  display: block; 
+  /* Show the close buttons when the cart is open */ 
+}
+.btn-close {
+   /* Add styling for your close button here */
+    cursor: pointer;
+}
+.cart{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(12,11,9,1);
+  color: #CDA45E;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px rgba(40,37,37,0.1);
+  padding: 20px;
+  z-index: 100;
+}
+.cart-active{
+  right: 0;
+  transition: 0.4s ease;
+}
+#cart-close{ 
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer; 
+  margin-bottom: 1rem; 
+} 
+#cart-close:hover{ 
+  background-color: #555; 
+}
+.cart-title{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cda45e67;
+}
+.cart-box{
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cda45e67;
+}
+.cart-img{
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  background-color: #292929;
+  padding: 5px;
+}
+.detail-box{
+  display: grid;
+  row-gap: 15px;
+}
+.price-box{
+  display: flex;
+  justify-content: space-between;
+}
+.cart-food-title{
+  font-size: 15px;
+  font-weight: 500;
+}
+.cart-price{
+  font-weight: 600;
+}
+.cart-amt{
+  font-weight: 600;
+}
+.cart-quantity{
+  background-color: #CDA45E;
+  color: #292929;
+  border: none;
+  outline: none;
+  width: 40px;
+  height: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+.cart-remove{
+  font-size: 25px;
+  cursor: pointer;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.total-title{
+  font-size: 15px;
+  font-weight: 600;
+}
+.total-price{
+  margin-left: 20px;
+  font-weight: 500;
+}
+.cart .btn-buy{
+  padding: 10px ;
+  border: none;
+  outline: 0;
+  background: transparent;
+  border: 2px solid #CDA45E;
+  color: #CDA45E;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+.btn-buy {
+  background-color: #ff9800; /* Orange background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* No underline */
+  display: inline-block; /* Inline-block display */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.btn-buy:hover {
+  background-color: #e68a00; /* Darker orange on hover */
+}
+
+.cart.btn-buy:hover{
+  color: #292929;
+  background: #CDA45E;
+}
+#cart-close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* -------- Food Section --------*/
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 60px;
+  position: absolute;
+  top: 150px;
+}
+.container .food-box{
+  height: 250px;
+  width: 160px;
+  margin: 30px;
+  background-color: rgba(0,0,0,0.6);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border: 2px solid #CDA45E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .food-box img{
+  height: 100px;
+  width: 100px;
+  background: #ddd;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 5px;
+  overflow: hidden;
+}
+.container .food-box img:hover{
+  transform: scale(1.2) ;
+}
+.container .food-box h2{
+  color: #CDA45E;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.container .food-box h3{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.container .food-box .add-cart{
+  padding: 3px 10px;
+  margin: 10px;
+  border: 2px solid #CDA45E;
+  outline: 0;
+  background-color: transparent;
+  color: #CDA45E;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+.container .food-box .add-cart:hover{
+  color: #292929;
+  background-color: #CDA45E;
+}
